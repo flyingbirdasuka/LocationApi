@@ -37,7 +37,7 @@ class ConnectController extends Controller
     public function store(Request $request)
     {
         $client = new Client();
-        $key = '91e0f66d8b0564cb1cca47d0f4e9c19b';
+        $key = '...';
         $city= $request->input('location');
         $response = $client->get('api.openweathermap.org/data/2.5/weather?q='.$city.'&appid='.$key);
         $items = json_decode($response->getBody()->getContents());
@@ -51,7 +51,7 @@ class ConnectController extends Controller
     private function getTripInfo($city)
     {
         $client = new Client();
-        $key = '5ae2e3f221c38a28845f05b69899600061604e9fe0ca12954424880e';
+        $key = '....';
         $response = $client->get('https://api.opentripmap.com/0.1/en/places/geoname?name='.$city.'&apikey='.$key);
         $location = json_decode($response->getBody()->getContents(), true);
 
