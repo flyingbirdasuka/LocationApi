@@ -15,7 +15,7 @@ class ConnectController extends Controller
     public function index()
     {   
         $client = new Client();
-        $key = '91e0f66d8b0564cb1cca47d0f4e9c19b';
+        $key = '...';
         $city= 'Malta';
         $response = $client->get('api.openweathermap.org/data/2.5/weather?q='.$city.'&appid='.$key);
         $items = json_decode($response->getBody()->getContents());
